@@ -1,7 +1,12 @@
 import java.util.Objects;
 
+// TODO: вынести внутренние классы во внешние
+// TODO: поля объектов сделать приватными
+
+
 class Cat {
     public String name;
+    // TODO: используй camelCase
     public int kindlevel;
     public int hp;
     public Cat(String name, int kindlevel, int hp) {
@@ -110,6 +115,7 @@ class CatDog {
     public static Cat[] cats = new Cat[10];
     public static Dog[] dogs = new Dog[10];
 
+    //TODO: соблюдай одинаковый стиль
     public static void cdMethod(){
         cats[0] = new Cat("Murzik", 7, 5);
         cats[1] = new Cat("Barsik", 3, 7);
@@ -136,19 +142,23 @@ class CatDog {
 
     public static void main(String[] args) {
         cdMethod();
+        //TODO: используй camelCase
         Cat maxcathash = cats[0];
+
+        //TODO: почему i?
         for (Cat i : cats) {
             if (i.hashCode() > maxcathash.hashCode()) {
                 maxcathash = i;
             }
         }
+        //TODO: используй camelCase
         Dog maxdoghash = dogs[0];
         for (Dog dog : dogs) {
             if (dog.hashCode() > maxdoghash.hashCode()) {
                 maxdoghash = dog;
             }
         }
-
+        //TODO: toString не нужен
         if (maxcathash.getHp() > maxdoghash.getKindlevel()){
             System.out.println("Победитель жесточайшей схватки - " + maxcathash.toString() + "с хэшем " + maxcathash.hashCode() + ", последние слова проигравшего");
             maxdoghash.voice();
